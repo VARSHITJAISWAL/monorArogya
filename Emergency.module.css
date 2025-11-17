@@ -1,0 +1,73 @@
+/* Emergency.module.css */
+
+/* 1. Light Aero Background: Clean and expansive with subtle depth */
+.light-aero-background {
+    background-color: #eaf1f8; /* Very light blue-gray base */
+    background-image: 
+        linear-gradient(to bottom right, #f8fcfd, #eaf1f8), /* Gentle main gradient */
+        radial-gradient(circle at 15% 15%, rgba(200, 230, 255, 0.4), transparent), /* Top-left highlight */
+        radial-gradient(circle at 85% 85%, rgba(220, 240, 255, 0.4), transparent); /* Bottom-right highlight */
+    background-size: 100% 100%, 800px 800px, 800px 800px;
+    background-repeat: no-repeat;
+    background-position: center center, top left, bottom right;
+}
+
+/* 2. Soft Glass Card Effect: Key to the modern, layered UI */
+.soft-glass-card {
+    /* Slightly opaque white with subtle blur */
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(12px); /* The magic sauce for glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.9); /* Lighter border for luminosity */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 0 15px rgba(0, 0, 0, 0.03); /* Soft, diffused shadows */
+    transition: all 0.3s ease-in-out;
+}
+.soft-glass-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.05); /* Slightly deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* 3. Input Fields: Clean, light, and clearly defined */
+.input-light-glass {
+    @apply bg-white/70 border border-gray-300 text-gray-800 placeholder-gray-400 transition duration-200;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle inset shadow for depth */
+}
+.input-light-glass:focus {
+    @apply outline-none ring-2 ring-blue-200 border-blue-400; /* Clear focus state */
+}
+
+/* 4. Soft Action Button Base Styling */
+.soft-action-button {
+    @apply text-white shadow-lg transition duration-300 ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.soft-action-button:hover {
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. Gradient Red Button for Booking Appointment */
+.btn-gradient-red {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Red-500 to Red-700 */
+    box-shadow: 0 5px 20px rgba(239, 68, 68, 0.4);
+}
+.btn-gradient-red:hover {
+    background: linear-gradient(135deg, #f87171 0%, #b91c1c 100%);
+    box-shadow: 0 7px 25px rgba(239, 68, 68, 0.6);
+}
+
+/* 6. Gradient Blue Button for Call Ambulance */
+.btn-gradient-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Blue-500 to Blue-700 */
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+}
+.btn-gradient-blue:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%);
+    box-shadow: 0 7px 25px rgba(59, 130, 246, 0.6);
+}
+
+/* 7. Alert Status Panel: Light green tint */
+.alert-status-panel {
+    background-color: rgba(220, 252, 231, 0.7); /* Light green-100 with opacity */
+    border: 1px solid #a7f3d0; /* Green-200 border */
+    box-shadow: inset 0 1px 5px rgba(16, 185, 129, 0.1); /* Subtle inner green shadow */
+}

@@ -1,0 +1,45 @@
+/* CampBlood.module.css */
+/* Advanced Tailwind classes for the Neo-Glass/Aero UI */
+
+/* 1. Global Background (Aero Effect) */
+.aero-background {
+    /* Subtle light gradient and small noise texture for depth */
+    background: #f0f4f8; /* Light gray-blue base */
+    background-image: radial-gradient(circle at 100% 150%, #e0f2fe, #f0f4f8),
+                      repeating-linear-gradient(45deg, #e0f2fe 0, #f0f4f8 1px, #f0f4f8 0, #f0f4f8 50%);
+    background-size: 100% 100%, 4px 4px;
+}
+
+/* 2. Header Glass Effect */
+.header-blur-glass {
+    /* Key to the glass look: semi-transparent white + backdrop blur */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    @apply shadow-xl border-b border-white/50; /* Light shadow for float */
+}
+
+/* 3. Card/Filter Bar Glass Effect */
+.card-glass-effect {
+    /* Lighter glass for cards */
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    @apply border border-white/80 shadow-2xl shadow-gray-200/50;
+}
+
+/* 4. Sidebar Item Hover */
+.sidebar-aero-effect {
+    @apply transition duration-300 ease-in-out transform hover:-translate-y-px hover:scale-[1.03] hover:shadow-xl hover:shadow-sky-400/40;
+}
+
+/* 5. Main CTA Button Luminous Shadow */
+.button-luminous-shadow {
+    /* Gradient background with strong, matching shadow */
+    @apply bg-gradient-to-r from-teal-500 to-sky-500 shadow-xl shadow-teal-500/50 transition duration-300 transform hover:scale-[1.03] hover:shadow-sky-500/70;
+}
+
+/* 6. Data Table Row Luminous Hover */
+.table-row-luminous-hover {
+    @apply transition-all duration-300 ease-in-out transform hover:translate-x-1 hover:shadow-lg hover:shadow-sky-200/50 hover:bg-white;
+}

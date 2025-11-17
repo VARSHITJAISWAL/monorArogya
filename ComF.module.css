@@ -1,0 +1,22 @@
+.supportButton {
+  position: fixed;
+  right: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: rgb(17, 177, 17);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.supportButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-50%) scale(1.05);
+}

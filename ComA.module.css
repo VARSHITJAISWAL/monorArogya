@@ -1,0 +1,165 @@
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url("https://static.vecteezy.com/system/resources/previews/015/286/180/non_2x/abstract-doctor-medical-line-medical-treatment-illustration-concept-and-icon-modern-on-health-background-health-insurance-vector.jpg")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  animation: fadeIn 1s ease-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  text-align: center;
+  color: #cdd4e0;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #e2e8f0;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #6366f1;
+  box-shadow: 0 0 5px #6366f1;
+}
+
+.input::placeholder {
+  color: #cdd4e0;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #cdd4e0;
+  transition: color 0.3s ease;
+}
+
+.eyeIcon:hover {
+  color: #ffffff;
+}
+
+.button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+.error {
+  color: #f87171;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.signupText {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #e0e0e0;
+}
+
+.signupLink {
+  font-weight: bold;
+  cursor: pointer;
+  color: #6366f1;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.signupLink:hover {
+  color: #9333ea;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Your existing ComA.module.css */
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url("https://static.vecteezy.com/system/resources/previews/015/286/180/non_2x/abstract-doctor-medical-line-medical-treatment-illustration-concept-and-icon-modern-on-health-background-health-insurance-vector.jpg")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* rest of your CSS remains same */

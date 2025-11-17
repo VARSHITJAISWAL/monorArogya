@@ -1,0 +1,143 @@
+/* Custom styles for the light theme */
+
+.hsectionWrapper {
+  background: #f0f4f8; /* A very light blue-gray background */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a202c; /* Dark text for contrast */
+}
+
+.header {
+  background: #ffffff; /* White background for a clean look */
+  border-bottom: 2px solid #e2e8f0;
+  position: relative;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #1a56db;
+}
+
+.homeButton {
+  background: #f0f4f8;
+  color: #3b82f6;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.homeButton:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Base card styling for all sections */
+.userInfoCard,
+.statusCard {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1s ease-out;
+}
+
+/* User Info input styles */
+.inputGroup label {
+  color: #4a5568;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  color: #1a202c;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Upload Card Styles */
+.uploadCard {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.uploadCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.uploadIcon {
+  font-size: 3rem;
+  color: #60a5fa;
+  margin: 0 auto;
+  transition: color 0.3s ease-in-out;
+}
+
+.uploadCard:hover .uploadIcon {
+  color: #3b82f6;
+}
+
+.uploadButton {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.uploadButton:hover {
+  background: #2563eb;
+}
+
+/* Progress Bar Styles */
+.progressBarWrapper {
+  background: #e2e8f0;
+  border-radius: 9999px;
+  height: 24px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transition: width 0.5s ease-in-out;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

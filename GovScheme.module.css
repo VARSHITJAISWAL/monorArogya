@@ -1,0 +1,149 @@
+/* GovScheme.module.css */
+
+/* 1. Global Aero Background: Soft, light, and textured for desktop */
+.gov-aero-background {
+    background-color: #f0f4f8; /* Base light blue-gray */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(200, 230, 255, 0.5), transparent 70%), /* Top-left subtle glow */
+        radial-gradient(circle at 90% 80%, rgba(220, 240, 255, 0.5), transparent 70%), /* Bottom-right subtle glow */
+        linear-gradient(135deg, #e0f2fe 0%, #f0f4f8 100%); /* Main background gradient */
+    background-size: 100% 100%;
+    background-attachment: fixed; /* Keep background fixed during scroll */
+}
+
+/* 2. Header Glass Effect: Slightly opaque and blurred */
+.header-glass-effect {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(220, 220, 220, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow for elevation */
+}
+
+/* 3. Filters Section Glass Card */
+.filters-glass-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(220, 220, 220, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 4. Input Fields (Search, Selects) Light Glass Effect */
+.input-light-glass, .filter-select-glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    color: #374151; /* Tailwind gray-700 */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+}
+.input-light-glass:focus, .filter-select-glass:focus {
+    outline: none;
+    border-color: #60a5fa; /* Tailwind blue-400 */
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2); /* Soft blue ring */
+}
+
+/* 5. Scheme Card Styling: Elevated and Interactive */
+.scheme-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(230, 230, 230, 0.7);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smoother transition */
+    transform: translateY(0); /* Base position */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Initial soft shadow */
+}
+.scheme-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12), 0 0 10px rgba(0, 0, 0, 0.05); /* Enhanced shadow */
+    border-color: #93c5fd; /* Light blue border on hover */
+}
+
+/* 6. Specific Card for "Closing Soon" status */
+.closing-soon-card {
+    border: 2px solid #ef4444; /* Red border */
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2); /* Red tint shadow */
+    background-color: #fff7f7; /* Very light red background */
+}
+.closing-soon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(239, 68, 68, 0.3);
+}
+
+
+/* 7. Action Button Hover Effect (View Details, Apply) */
+.action-button-hover {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure text is above effect */
+}
+.action-button-hover:hover {
+    filter: brightness(1.05); /* Slight brighten on hover */
+}
+/* Add a ripple-like effect on click */
+.action-button-hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1) translate(-50%, -50%);
+    transition: all 0.3s ease-out;
+    z-index: 0;
+}
+.action-button-hover:active::after {
+    transform: scale(30) translate(-50%, -50%);
+    opacity: 1;
+    transition: 0s; /* Instant effect on click */
+}
+
+
+/* 8. Apply Button Styling (Vibrant Green) */
+.apply-button {
+    background: linear-gradient(135deg, #34d399 0%, #059669 100%); /* Green-400 to Green-600 */
+    box-shadow: 0 4px 15px rgba(52, 211, 153, 0.3);
+}
+.apply-button:hover {
+    background: linear-gradient(135deg, #6ee7b7 0%, #047857 100%);
+    box-shadow: 0 6px 20px rgba(52, 211, 153, 0.4);
+}
+
+/* 9. Closing Soon Button Styling (Vibrant Orange/Red) */
+.closing-soon-button {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); /* Amber-400 to Amber-500 */
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+.closing-soon-button:hover {
+    background: linear-gradient(135deg, #fcd34d 0%, #d97706 100%);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+
+/* 10. Filter Tag Glow */
+.filter-tag-glow {
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.2); /* Subtle blue glow */
+}
+
+/* 11. Footer Glass Effect */
+.footer-glass-effect {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(220, 220, 220, 0.7);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05); /* Inward soft shadow */
+}
+
+/* 12. Footer Icon Hover Effect */
+.footer-icon-hover {
+    transition: all 0.2s ease-in-out;
+}
+.footer-icon-hover:hover {
+    transform: translateY(-3px); /* Lift effect */
+    color: #3b82f6; /* Blue text on hover */
+}
+.footer-icon-hover:hover .text-xs { /* Also change text color */
+    color: #3b82f6;
+}

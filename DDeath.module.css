@@ -1,0 +1,103 @@
+/* DDeath.module.css */
+
+/* 1. Soft Aero Background: Clean and professional */
+.soft-aero-background {
+    background-color: #f0f4f8; /* Very light, professional blue-gray */
+    background-image: 
+        radial-gradient(circle at 5% 5%, rgba(200, 220, 240, 0.4), transparent),
+        radial-gradient(circle at 95% 95%, rgba(220, 230, 245, 0.4), transparent);
+}
+
+/* 2. Glass Card Base Style */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft, pronounced shadow */
+}
+
+/* 3. Focus Card Style (For Certificate & Status Timeline) */
+.glass-card-focus {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow for focus */
+}
+
+/* 4. Input Search/Filter (Clean Look) */
+.input-clean {
+    @apply bg-white border border-gray-300 focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition duration-300;
+}
+
+/* 5. Blue Gradient Button (Primary Action) */
+.btn-blue-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); /* Blue-500 to Blue-800 */
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+.btn-blue-gradient:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+}
+
+/* 6. Green Alert Panel (For Quick Notify) */
+.medication-focus-panel {
+    background-color: #f0fff4; /* Very light green tint */
+    border: 1px solid #a7f3d0;
+}
+
+/* 7. Timeline Styling */
+.status-timeline-container {
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Vertical Line for Timeline */
+.timeline-v-line {
+    position: absolute;
+    left: 2px; /* Center alignment */
+    top: 5px;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #d1d5db, #a8c8e6); /* Soft gradient line */
+    z-index: 1;
+}
+
+/* Dot Background (to lift the dot from the card) */
+.timeline-dot-bg {
+    position: absolute;
+    left: -18px; 
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0f4f8; /* Match outer background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border: 3px solid #f0f4f8; /* Creates a visible separation */
+}
+
+/* Actual Dot/Icon container */
+.timeline-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white; /* Inner dot color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for IN_PROGRESS status */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin {
+    animation: spin 1s linear infinite;
+}

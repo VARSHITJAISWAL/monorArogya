@@ -1,0 +1,491 @@
+/* --- Root Variables and Base Styles --- */
+:root {
+    --primary-blue: #007bff; /* Main accent blue */
+    --primary-blue-dark: #0056b3;
+    --background-light: #f4f6fa; /* Overall page background */
+    --card-background: #ffffff; /* Card background */
+    --text-dark: #333333; /* Main dark text */
+    --text-medium: #555555;
+    --text-light: #777777;
+    --border-light: #e0e0e0; /* Light border color */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow for cards */
+    --sidebar-width: 250px;
+
+    /* Feature Card Colors */
+    --card-yellow-bg: #fffbe6;
+    --card-yellow-border: #ffe082;
+    --card-yellow-icon: #ffb300;
+
+    --card-blue-bg: #e6f7ff;
+    --card-blue-border: #80dfff;
+    --card-blue-icon: #00bcd4;
+
+    --card-green-bg: #e6ffe6;
+    --card-green-border: #a7edb7;
+    --card-green-icon: #4caf50;
+}
+
+.pageContainer {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-soft);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-light);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0 30px 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.logoIcon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-right: 10px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: var(--text-medium);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    border-left: 5px solid transparent; /* For active indicator */
+}
+
+.navLink:hover {
+    background-color: #f0f2f7;
+    color: var(--primary-blue);
+}
+
+.activeNavLink {
+    background-color: #e6f0ff;
+    color: var(--primary-blue);
+    border-left: 5px solid var(--primary-blue);
+    font-weight: 600;
+}
+
+.navIcon {
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+/* --- Main Content Area --- */
+.mainContentArea {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+/* Top Header */
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pageTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.headerRight {
+    display: flex;
+    gap: 25px;
+}
+
+.headerIcon {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.headerIcon:hover {
+    color: var(--primary-blue);
+}
+
+/* --- Feature Cards --- */
+.featureCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.featureCard {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1; /* For proper icon vertical alignment */
+}
+
+.cardHeading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--text-dark);
+}
+
+.cardDescription {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Specific Feature Card Colors */
+.cardYellow {
+    background-color: var(--card-yellow-bg);
+    border-color: var(--card-yellow-border);
+}
+.cardYellow .cardIcon { color: var(--card-yellow-icon); }
+
+.cardBlue {
+    background-color: var(--card-blue-bg);
+    border-color: var(--card-blue-border);
+}
+.cardBlue .cardIcon { color: var(--card-blue-icon); }
+
+.cardGreen {
+    background-color: var(--card-green-bg);
+    border-color: var(--card-green-border);
+}
+.cardGreen .cardIcon { color: var(--card-green-icon); }
+
+/* --- Booking Details Section --- */
+.bookingSection {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr; /* Calendar/Time wider than Doctor/Assistant */
+    gap: 25px;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Card base styles for booking elements */
+.selectDateCard, .selectTimeCard, .findDoctorCard, .virtualAssistantCard {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.sectionHeading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 20px;
+}
+
+/* --- Calendar Styles --- */
+.calendar {
+    text-align: center;
+    max-width: 320px; /* Adjust calendar width to match image */
+    margin: 0 auto;
+}
+
+.calendarHeader {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    color: var(--text-medium);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.dateCell {
+    padding: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: transparent; /* Default background */
+    border: none; /* No default border */
+    color: var(--text-dark);
+}
+
+.dateCell.emptyCell {
+    visibility: hidden; /* Hide empty cells */
+    cursor: default;
+}
+
+.dateCell:not(.emptyCell):hover {
+    background-color: #f0f2f7;
+    color: var(--primary-blue);
+}
+
+.dateCell.today {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.dateCell.selectedDate {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 8px; /* Square selection as in image */
+}
+
+/* --- Time Slots --- */
+.timeSlots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.timeButton {
+    padding: 10px 18px;
+    border: 1px solid var(--border-light);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.timeButton:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.timeButton.selectedTime {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* --- Find Doctor Card --- */
+.doctorFilters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.dropdownFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: var(--background-light);
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+.dropdownFilter span {
+    margin-right: 8px;
+}
+
+.searchIcon {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.doctorsList {
+    display: flex;
+    justify-content: flex-start; /* Align doctors to start */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.doctorAvatarCard {
+    text-align: center;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #f7f9fb;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    width: 100px; /* Fixed width for consistent display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctorAvatarCard:hover {
+    background-color: #eaf3fd;
+}
+
+.doctorAvatarCard.selectedDoctor {
+    border-color: var(--primary-blue);
+    background-color: #e6f7ff;
+}
+
+.doctorAvatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 3px solid white; /* White border as in image */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctorName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* --- Virtual Assistant Card --- */
+.assistantContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.assistantAvatar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.assistantAvatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid var(--primary-blue);
+}
+
+.assistantAvatar span {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.assistantMessage {
+    background-color: #e6f7ff; /* Light blue bubble */
+    color: var(--text-dark);
+    padding: 12px 15px;
+    border-radius: 15px 15px 15px 0; /* Chat bubble style */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Align message to the left */
+}
+
+.assistantOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.assistantOption {
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    background-color: #f0f2f7;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.assistantOption:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+.assistantInput {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* --- Confirm Booking Button --- */
+.confirmButtonContainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.confirmBookingButton {
+    padding: 15px 40px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.confirmBookingButton:hover {
+    background-color: var(--primary-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}

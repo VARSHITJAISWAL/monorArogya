@@ -1,0 +1,332 @@
+/* --- Global & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #3f51b5; /* Deep Indigo/Blue for professionalism */
+    --accent-color: #4CAF50; /* Green for key actions */
+    --text-dark: #37474f; /* Dark Slate Grey */
+    --text-light: #90a4ae;
+    --background-primary: #e0e5ec; /* The key soft background for Neumorphism */
+    
+    /* Neumorphism Shadows */
+    --shadow-light: -6px -6px 14px rgba(255, 255, 255, 0.9), 
+                    6px 6px 10px rgba(0, 0, 0, 0.15);
+    --shadow-inset: inset 3px 3px 7px #b3b8bd, 
+                    inset -3px -3px 7px #ffffff;
+    --shadow-raised: 8px 8px 15px #c3c7cc, 
+                     -8px -8px 15px #ffffff;
+    
+    --footer-bg: #37474f; 
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-primary);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+/* --- HEADER (Flat/Minimal for Contrast with Cards) --- */
+.header {
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem; 
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+/* ... other header elements (headerLeft, searchBar, etc. from previous response) ... */
+.headerLeft { display: flex; align-items: center; gap: 3rem; }
+.searchBar { position: relative; display: flex; align-items: center; }
+.searchInput {
+    background-color: #f1f3f5;
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    width: 300px;
+    font-size: 0.9rem;
+    padding-right: 45px; 
+    box-shadow: var(--shadow-inset); /* Neumorphic inset for search */
+}
+.searchInput:focus { outline: none; box-shadow: var(--shadow-inset); }
+
+.searchButton {
+    position: absolute;
+    right: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+}
+.searchButton:hover { background-color: #303f9f; }
+
+.headerIcons { display: flex; align-items: center; gap: 1rem; }
+
+/* Creative Neumorphic Icon Button Style */
+.iconNeumorphic {
+    background: var(--background-primary);
+    border: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.8rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow-light); /* Raised effect */
+}
+
+.iconNeumorphic:hover {
+    color: var(--primary-color);
+    box-shadow: var(--shadow-inset); /* Pressed effect on hover */
+}
+
+.profileIcon {
+    color: white;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    padding: 0.7rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+.profileIcon:hover {
+    background-color: #43a047;
+    box-shadow: 0 0 0 3px var(--accent-color); /* Light border highlight */
+}
+
+/* --- MAIN CONTENT & TITLE --- */
+.mainContent {
+    flex-grow: 1;
+    padding: 3rem 4rem;
+}
+
+.dashboardTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* -------------------------------------- */
+/* --- CARDS WRAPPER & GRID SETUP --- */
+/* -------------------------------------- */
+.cardsWrapper {
+    display: grid;
+    /* Desktop: 4 columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+}
+
+/* --- CREATIVE NEUMORPHIC CARD STYLES --- */
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 190px; 
+    width: 100%;
+    border-radius: 20px; /* Highly rounded corners */
+    background-color: var(--background-primary);
+    box-shadow: var(--shadow-raised); /* Initial Raised effect */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hover Effect: Card is pressed into the surface */
+.card:hover {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-inset); /* Pressed effect on click/hover */
+    color: var(--primary-color);
+}
+
+.cardIcon {
+    /* Large, colorful icon circle */
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 2.2rem;
+    color: white; /* Icon itself is white */
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deep shadow for icons */
+}
+
+.card:hover .cardIcon {
+    transform: scale(0.9);
+    box-shadow: var(--shadow-inset); /* Icons appear pressed too */
+}
+
+.cardTitle {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+    color: var(--primary-color);
+}
+
+/* Individual Card Colors (Base background colors for the Icon circle) */
+.card1 .cardIcon { background-color: #4CAF50; } 
+.card2 .cardIcon { background-color: #E53935; } 
+.card3 .cardIcon { background-color: #FF9800; } 
+.card4 .cardIcon { background-color: #F44336; } 
+.card5 .cardIcon { background-color: #3f51b5; } /* Primary Color */
+.card6 .cardIcon { background-color: #9C27B0; } 
+.card7 .cardIcon { background-color: #00BCD4; } 
+.card8 .cardIcon { background-color: #607D8B; } 
+
+/* --- FOOTER --- */
+.footer {
+    background: var(--footer-bg);
+    color: #bdbdbd;
+    font-weight: 400;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 30px;
+}
+
+.footer span {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footer span:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #90a4ae;
+}
+
+/* -------------------------------------- */
+/* --- RESPONSIVE DESIGN --- */
+/* -------------------------------------- */
+
+/* 1200px and below -> 3 Columns */
+@media (max-width: 1200px) {
+    .header { padding: 1rem 2rem; }
+    .cardsWrapper { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .mainContent { padding: 2rem; }
+}
+
+/* 900px and below (Tablets) -> 2 Columns */
+@media (max-width: 900px) {
+    .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .headerLeft { width: 100%; justify-content: space-between; }
+    .searchBar { width: 100%; margin-top: 10px; }
+    .searchInput { width: 100%; }
+    .headerIcons { width: 100%; justify-content: space-around; margin-top: 1rem; }
+    
+    .cardsWrapper { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .card { height: 160px; }
+    .cardIcon { font-size: 1.8rem; padding: 15px; }
+    .cardTitle { font-size: 1rem; }
+}
+
+/* 600px and below (Mobile Phones) -> 1 Column */
+@media (max-width: 600px) {
+    .cardsWrapper { grid-template-columns: 1fr; gap: 15px; padding: 1rem; }
+    .mainContent { padding: 1rem; }
+    .footer { flex-direction: column; gap: 0.5rem; padding: 1rem; }
+    .footerLinks { flex-direction: column; gap: 5px; }
+}
+/* --- Global & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #3f51b5; /* Deep Indigo/Blue for professionalism */
+    --accent-color: #4CAF50; /* Green for key actions */
+    --text-dark: #37474f; /* Dark Slate Grey */
+    --text-light: #90a4ae;
+    --background-primary: #e0e5ec; /* The key soft background for Neumorphism */
+    
+    /* Neumorphism Shadows */
+    --shadow-light: -6px -6px 14px rgba(255, 255, 255, 0.9), 
+                    6px 6px 10px rgba(0, 0, 0, 0.15);
+    --shadow-inset: inset 3px 3px 7px #b3b8bd, 
+                    inset -3px -3px 7px #ffffff;
+    --shadow-raised: 8px 8px 15px #c3c7cc, 
+                     -8px -8px 15px #ffffff;
+    
+    --footer-bg: #37474f; 
+}
+
+/* ... (Rest of the CSS remains the same: .container, .header, .card styles) ... */
+
+/* --- FOOTER (Changes applied here) --- */
+.footer {
+    background: var(--footer-bg);
+    color: #bdbdbd; /* This is the default text color */
+    font-weight: 400;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 30px;
+}
+
+/* TARGETED CHANGE: Making links white */
+.footerLinks span {
+    cursor: pointer;
+    transition: color 0.2s ease;
+    color: #ffffff; /* <<<--- CHANGED TO WHITE */
+}
+
+.footerLinks span:hover {
+    color: var(--primary-color); /* Hover color remains primary-blue */
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #90a4ae;
+}
+
+/* ... (Rest of the CSS remains the same: @media queries) ... */
+.cardNew .cardIcon {
+    background-color: #8BC34A; /* Fresh green for health theme */
+}

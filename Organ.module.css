@@ -1,0 +1,85 @@
+/* Organ.module.css */
+
+/* 1. Caring Aero Background: Soft, inviting, and clean */
+.caring-aero-background {
+    background-color: #f0f8ff; /* Very light blue base */
+    background-image: 
+        linear-gradient(to bottom right, #f8fcfd, #e6f7ff), /* Gentle main gradient */
+        radial-gradient(circle at 10% 10%, rgba(190, 220, 255, 0.3), transparent), /* Top-left highlight */
+        radial-gradient(circle at 90% 90%, rgba(210, 240, 255, 0.3), transparent); /* Bottom-right highlight */
+    background-size: 100% 100%, 700px 700px, 700px 700px;
+    background-repeat: no-repeat;
+    background-position: center center, top left, bottom right;
+}
+
+/* 2. Main Glass Card Effect: Central panel, highly visible */
+.main-glass-card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.95); /* Crisp, luminous border */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(0, 0, 0, 0.04); /* Deep, soft shadow */
+}
+
+/* 3. Form Section Card within the main card for subtle layering */
+.form-section {
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly more transparent */
+    border-radius: 1rem; /* Match parent */
+    padding: 1.5rem; /* Internal padding */
+    margin-bottom: 2rem; /* Spacing between sections */
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.03); /* Subtle inner shadow for depth */
+    border: 1px solid rgba(200, 220, 240, 0.5); /* Fainter border */
+}
+
+
+/* 4. Input Fields: Clean, light, and interactive */
+.input-glass {
+    @apply w-full p-3 rounded-lg bg-white/70 border border-gray-300 text-gray-800 placeholder-gray-400 
+           transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.06); /* Subtle inset for depth */
+}
+
+/* 5. Tab Styling (Donor/Recipient toggle) */
+.tab-active {
+    @apply bg-blue-500 text-white shadow-lg shadow-blue-500/30;
+}
+.tab-active:hover {
+    @apply bg-blue-600 shadow-xl shadow-blue-600/40;
+}
+
+.tab-inactive {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-blue-700;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Red Gradient Button for Donor Registration */
+.btn-red-gradient {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* Red-500 to Red-700 */
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+.btn-red-gradient:hover {
+    background: linear-gradient(135deg, #f87171 0%, #b91c1c 100%);
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 7. Blue Gradient Button for Recipient Registration */
+.btn-blue-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Blue-500 to Blue-700 */
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+.btn-blue-gradient:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* 8. Upload Medical Button: Subtler, secondary action */
+.btn-upload-medical {
+    @apply bg-gray-200 border border-gray-300 text-gray-700 shadow-sm transition duration-200;
+}
+.btn-upload-medical:hover {
+    @apply bg-gray-300 border-gray-400 text-gray-800 shadow-md;
+    transform: translateY(-1px);
+}
